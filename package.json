@@ -1,6 +1,6 @@
 {
   "name": "mini-range-slider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MiniRangeSlider is a customizable range slider component for Alipay mini apps, allowing users to select a range of values by sliding between two handles. The component offers a variety of customization options, including setting the minimum and maximum values, button size, and colors for the slider track, selection area, and handles. With smooth sliding transitions and easy-to-use event handlers, MiniRangeSlider is the perfect solution for creating dynamic and interactive user interfaces in your Alipay mini apps.",
   "main": "index.js",
   "scripts": {
