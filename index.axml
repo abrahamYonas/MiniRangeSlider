@@ -1,0 +1,7 @@
+<view class="slider-container" style="width:{{trackWidth}}px;height:{{trackSize}}px;background-color:{{backgroundColor}};">
+  <view class="slider-track" style="height:{{trackSize}}px;width:{{rangeWidth}};margin-left:{{leftRangeMargin}}px;
+    margin-right:{{rightRangeMargin}}px;background-color:{{activeColor}}">
+    <view class="slider-track-handle" onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" data-slider="left" style="width:{{handleSize}}px;height:{{handleSize}}px;"/>
+    <view class="slider-track-handle" onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" data-slider="right" style="width:{{handleSize}}px;height:{{handleSize}}px;"/>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+.slider-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.slider-track {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-track-handle {
+  border: 1px thin lightgray;
+  border-radius: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: margin-left 0.2s ease-in-out;
+}
