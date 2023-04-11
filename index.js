@@ -34,7 +34,7 @@ Component({
   methods: {
     getScreenRatio() {
       const { screenWidth } = my.getSystemInfoSync();
-      this.screenRatio = screenWidth / 750;
+      this.data.screenRatio = screenWidth / 750;
     },
 
     setInitialValues() {
@@ -49,8 +49,8 @@ Component({
       } = this.props;
 
       this.setData({
-        trackWidth: this.screenRatio * (trackWidth || 750),
-        rangeWidth: this.screenRatio * (trackWidth || 750),
+        trackWidth: this.data.screenRatio * (trackWidth || 750),
+        rangeWidth: this.data.screenRatio * (trackWidth || 750),
         handleSize: handleSize || this.data.handleSize,
         min: min || this.data.min,
         max: max || this.data.max,
