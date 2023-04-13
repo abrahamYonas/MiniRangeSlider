@@ -7,6 +7,7 @@ Component({
     slider: "left",
     clientX: 0,
     screenRatio: 0,
+    scaleRatio:0.9115, // ratio is a constant value it is used to scale slider width to fit evry screen size 
     min: 0,
     max: 100,
     range: 0,
@@ -33,8 +34,16 @@ Component({
   },
   methods: {
     getScreenRatio() {
-      const { screenWidth } = my.getSystemInfoSync();
-      this.data.screenRatio = screenWidth / 750;
+      const { screenWidth,pixelRatio,ariver_ext } = my.getSystemInfoSync();
+      this.data.screenRatio = pixelRatio;
+
+      // check if the app runs in emulator or super app and assign the proper track width
+      if(!ariver_ext){
+        this.data.trackWidth = this.props.trackWidth
+      }
+      else{
+        this.data.trackWidth = (screenWidth / pixelRatio) * this.data.scaleRatio
+      }
     },
 
     setInitialValues() {
@@ -49,8 +58,8 @@ Component({
       } = this.props;
 
       this.setData({
-        trackWidth: this.data.screenRatio * (trackWidth || 750),
-        rangeWidth: this.data.screenRatio * (trackWidth || 750),
+        trackWidth: this.data.trackWidth,
+        rangeWidth: this.data.trackWidth,
         handleSize: handleSize || this.data.handleSize,
         min: min || this.data.min,
         max: max || this.data.max,
